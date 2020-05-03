@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <vector>
 #include <iostream>
 #include "Cell.h"
@@ -13,4 +13,3 @@ public:
 	vector<vector<Cell>>& Cells();
 
 };
-

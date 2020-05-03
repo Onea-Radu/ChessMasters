@@ -1,18 +1,21 @@
-#pragma once
+﻿#pragma once
 #include "Table.h"
 #include "ChessPiece.h"
 #include <iostream>
 using namespace std;
 class ChessMaster
 {
-	Table t;
-	ChessPiece* c;
+	static Table* tab;
+	static ChessPiece* piece;
 	bool verbosity;
-	static int gamesrun;
+	bool gameGoing;
+	pair<int, int> finalPlace;
 public:
+	ChessMaster();
 	void runGame(bool);
-	bool hasEnded();
-	static int howManyGames();
+	void hasEnded();
+	static Table* getTable();
+	static ChessPiece* getPiece();
 
+	friend istream& operator>> (istream&, ChessMaster&);
 };
-

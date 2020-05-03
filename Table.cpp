@@ -1,6 +1,6 @@
-#include "Table.h"
+﻿#include "Table.h"
 
-Table::Table(int ms):size(ms)
+Table::Table(int ms) :size(ms)
 {
 }
 
@@ -12,10 +12,16 @@ vector<vector<Cell>>& Table::Cells()
 
 ostream& operator<<(ostream& out, const Table& t)
 {
-	
+
 	for (auto linie : t.cells)
+	{
+		out << '|';
 		for (auto cell : linie)
-			if(cell.visible())
 			out << cell;
+		out << '|';
+		out << endl;
+
+	}
+	out << endl;
 	return out;
 }

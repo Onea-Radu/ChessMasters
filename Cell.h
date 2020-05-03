@@ -1,14 +1,23 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
-#include "Thing.h"
+class Thing;
+class Wall;
 using namespace std;
 class Cell
 {
 	Thing* t;
 	bool vis;
+	bool visi;
 
 public:
-	bool visible();
+	Cell();
+	bool visible() const;
+	bool visited() const;
+	void visit();
+	void see();
+	void put(Thing*);
+	Thing* take();
+	Thing* move(Cell&);
+	Thing* seeThing();
 	friend ostream& operator<<(ostream& out, const Cell& c);
 };
-
